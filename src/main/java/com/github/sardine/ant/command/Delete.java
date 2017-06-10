@@ -1,6 +1,7 @@
 package com.github.sardine.ant.command;
 
 import com.github.sardine.ant.Command;
+import com.github.sardine.impl.SardineException;
 
 /**
  * A nice ant wrapper around sardine.delete().
@@ -18,7 +19,14 @@ public class Delete extends Command
 	@Override
 	protected void execute() throws Exception {
 		log("deleting " + url);
-		getSardine().delete(url);
+		try {
+			getSardine().delete(url);
+		} catch (SardineException e) {
+			if (e.getStatusCode() == 404) {
+				return;
+			}
+			throw e;
+		}
 	}
 
 	/**
