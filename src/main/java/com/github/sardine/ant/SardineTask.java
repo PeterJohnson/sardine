@@ -6,6 +6,7 @@ import com.github.sardine.ant.command.Copy;
 import com.github.sardine.ant.command.CreateDirectory;
 import com.github.sardine.ant.command.Delete;
 import com.github.sardine.ant.command.Exists;
+import com.github.sardine.ant.command.Get;
 import com.github.sardine.ant.command.RecursiveGet;
 import com.github.sardine.ant.command.Move;
 import com.github.sardine.ant.command.Put;
@@ -71,6 +72,11 @@ public class SardineTask extends Task
 	/** Add a move command. */
 	public void addMove(Move move) {
 		addCommand(move);
+	}
+
+	/** Add a get command. */
+	public void addGet(Get get) {
+		addCommand(get);
 	}
 
 	/** Add a put command. */
