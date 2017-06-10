@@ -59,7 +59,7 @@ public class Put extends Command {
 			for (Iterator<FileSet> setIterator = srcFileSets.iterator(); setIterator.hasNext();) {
 				FileSet fileSet = setIterator.next();
 				File dir = fileSet.getDir(getProject());
-				log("putting from " + dir + " to " + baseUrl);
+				//log("putting from " + dir + " to " + baseUrl);
 				String[] files = fileSet.getDirectoryScanner(getProject()).getIncludedFiles();
 				for (int idx = 0; idx < files.length; idx++) {
 					String fileName = files[idx].replace('\\', '/'); // no Windows backslashes in the URL
@@ -76,7 +76,7 @@ public class Put extends Command {
 				}
 			}
 		}
-		log("putting of " + fileCounter + " file(s) completed");
+		//log("putting of " + fileCounter + " file(s) completed");
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class Put extends Command {
 	 * Process an individual file with sardine.put()
 	 */
 	private void process(File file, URL dest, boolean expectContinue) throws Exception {
-		log("putting " + file + " to " + dest + " with expectContinue=" + expectContinue, Project.MSG_VERBOSE);
+		log("putting " + file + " to " + dest);
 		getSardine().put(dest.toString(), file, contentType, expectContinue);
 	}
 
