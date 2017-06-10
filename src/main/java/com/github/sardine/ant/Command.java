@@ -52,6 +52,11 @@ public abstract class Command extends ProjectComponent
 		}
 	}
 
+	@Override
+	public void log(String msg) {
+		System.out.println(msg);
+	}
+
 	/**
 	 * Sets the SardineTask
 	 */
