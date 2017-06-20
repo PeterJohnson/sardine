@@ -26,7 +26,7 @@ public class SardineTask extends Task
 	private List<Command> commands = new ArrayList<Command>();
 
 	/** Attribute failOnError. */
-	private boolean failOnError = false;
+	private boolean failOnError = true;
 
 	/** Attribute username. */
 	private String username = null;
