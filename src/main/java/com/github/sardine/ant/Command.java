@@ -43,7 +43,7 @@ public abstract class Command extends ProjectComponent
 			validateAttributes();
 			execute();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			if (sardineTask.isFailonerror()) {
 				throw e;
 			}
